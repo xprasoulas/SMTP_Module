@@ -11,7 +11,7 @@ import pandas as pd
 
 
 # Using a library call as PANDA
-data = pd.read_csv("weather_data.csv")
+# data = pd.read_csv("weather_data.csv")
 # # Type of data is a DataFrame = a sheet(table) of an excel file
 # print(type(data))
 # # Types of data is a Series = Στηλη στο excel
@@ -50,20 +50,26 @@ data = pd.read_csv("weather_data.csv")
 #
 # print(data[data.temp == max_temp])
 
-# Transform temp to Fahrenheit using the Formula
-# (0°C × 9/5) + 32 = 32°F
-monday = data[data.day == "Monday"]
-fahrenheit = (int(monday.temp) * 9/5)+32
-print(f"{fahrenheit}F")
+# # Transform temp to Fahrenheit using the Formula
+# # (0°C × 9/5) + 32 = 32°F
+# monday = data[data.day == "Monday"]
+# fahrenheit = (int(monday.temp) * 9/5)+32
+# print(f"{fahrenheit}F")
+#
+# # Create Dataframe from Scratch using a given dictionary
+#
+# data_dict = {
+#     "student": ["amy","Jenna", "Angela"],
+#     "scores": [79,55,26]
+# }
+# data = pd.DataFrame(data_dict)
+# print(data)
+# # Save to a csv
+# data.to_csv("export_to.csv",columns=None)
+#
 
-# Create Dataframe from Scratch using a given dictionary
 
-data_dict = {
-    "student": ["amy","Jenna", "Angela"],
-    "scores": [79,55,26]
-}
-data = pd.DataFrame(data_dict)
-print(data)
-# Save to a csv
-data.to_csv("export_to.csv",columns=None)
+data = pd.read_csv("Squirrel_Data.csv")
 
+table = data["Primary Fur Color"].value_counts()
+new_data_table = table.to_csv("colors.csv")
